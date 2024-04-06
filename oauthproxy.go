@@ -1202,6 +1202,7 @@ func checkAllowedGroups(req *http.Request, s *sessionsapi.SessionState) bool {
 	}
 
 	for _, group := range s.Groups {
+		logger.Printf("session group: %s", group)
 		if _, ok := allowedGroups[group]; ok {
 			return true
 		}
